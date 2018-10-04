@@ -1,9 +1,11 @@
 body{
-    background-color: lightgoldenrodyellow;
+    background-color: grey;
     text-align: center;
+    color: white;
+    font-size: 18px;
 }
 h1{
-    background-color: white;
+   
     width: 500px;
     margin: 0 auto;
 }
@@ -11,8 +13,8 @@ h1{
 #description {
 
     width: 500px;
-    background-color: palevioletred;
-    color:white;
+    background-color: lightskyblue;
+
     font-size: 18px;
     margin: 0 auto;
 
