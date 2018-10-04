@@ -1,0 +1,58 @@
+body{
+    background-color: lightgoldenrodyellow;
+    text-align: center;
+}
+
+#description {
+
+    width: 500px;
+    background-color: palevioletred;
+    color:white;
+    font-size: 18px;
+    margin: 0 auto;
+
+}
+#random {
+    background-color: lightskyblue;
+    width: 200px;
+    height:100px;
+    float: left;
+    margin: 10px;
+}
+#outcomes {
+    text-align:center;
+    background-color: lightskyblue;
+    width: 100px;
+    height:100px;
+    margin: 10px;
+    float: left;
+    
+}
+#game {
+    background-color: white;
+    width: 500px;
+    margin: 0 auto;
+}
+
+
+.crystalimg{
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+    float: left;
+    position: relative;
+}
+
+#totalscoretag {
+    background-color: lightskyblue;
+    width: 200px;
+    height:30px;
+    margin: 10px;
+}
+#score {
+    background-color: lightskyblue;
+    width: 200px;
+    height:100px;
+    margin: 10px;
+}
+
