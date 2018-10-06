@@ -10,8 +10,8 @@ var random = 0
 
 $(document).ready(function play() {
     score = 0
-    var min = 50
-    var max = 200
+    var min = 19
+    var max = 120
     reset()
 
     $("#crystal1").click(function () {
@@ -59,10 +59,10 @@ $(document).ready(function play() {
     function reset() {
         score = 0
         random = Math.floor(Math.random() * (max - min) + min)
-        crystal1 = ($("#crystal1").val(Math.floor(Math.random() * (19 - 1) + 1)))
-        crystal2 = ($("#crystal2").val(Math.floor(Math.random() * (19 - 1) + 1)))
-        crystal3 = ($("#crystal3").val(Math.floor(Math.random() * (19 - 1) + 1)))
-        crystal4 = ($("#crystal4").val(Math.floor(Math.random() * (19 - 1) + 1)))
+        crystal1 = ($("#crystal1").val(Math.floor(Math.random() * (12 - 1) + 1)))
+        crystal2 = ($("#crystal2").val(Math.floor(Math.random() * (12 - 1) + 1)))
+        crystal3 = ($("#crystal3").val(Math.floor(Math.random() * (12 - 1) + 1)))
+        crystal4 = ($("#crystal4").val(Math.floor(Math.random() * (12 - 1) + 1)))
         $("#random").html(random)
         $("#score").html(score)
         $("#wins").html("Wins: " + wins)
