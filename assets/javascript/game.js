@@ -1,124 +1,74 @@
-
 var wins = 0
 var losses = 0
 var val = 0
-var score 
-$(document).ready(function reset(){
+var score = 0
+var crystal1 = 0
+var crystal2 = 0
+var crystal3 = 0
+var crystal4 = 0
+var random = 0
+
+$(document).ready(function play() {
     score = 0
-    var random = Math.floor(Math.random() * 300)
-    $("#crystal1").val(Math.floor(Math.random() * 20))
-    $("#crystal2").val(Math.floor(Math.random() * 20))
-    $("#crystal3").val(Math.floor(Math.random() * 20))
-    $("#crystal4").val(Math.floor(Math.random() * 20))
-    $("#random").html(random)
-    $("#score").html(score)
-    $("#wins").html("Wins: " + wins)
-    $("#losses").html("Losses: " + losses)
+    var min = 50
+    var max = 200
+    reset()
 
-$("#crystal1").click(function(click){
-    val = parseInt($(this).val())
-    console.log(val)
-    selection(click)
-})
-$("#crystal2").click(function(click){
-    val = parseInt($(this).val())
-    console.log(val)
-    selection(click)
-})
-$("#crystal3").click(function(click){
-    val = parseInt($(this).val())
-    console.log(val)
-    selection(click)
-})
-$("#crystal4").click(function(click){
-    val = parseInt($(this).val())
-    console.log(val)
-    selection(click)
-})
-    
+    $("#crystal1").click(function () {
+        val = parseInt($(crystal1).val())
+        selection()
+    })
+    $("#crystal2").click(function () {
+        val = parseInt($(crystal2).val())
+        selection()
+    })
+    $("#crystal3").click(function () {
+        val = parseInt($(crystal3).val())
+        selection()
+    })
+    $("#crystal4").click(function () {
+        val = parseInt($(crystal4).val())
+        selection();
+    })
 
-function selection(){
-    score = score + val
-    $("#score").html(score)
-    if (score === random){
-        alert("You Win")
-        wins++
-        reset()
+
+    function selection() {
+        score = score + val
+        $("#score").html(score)
+
+        if (score === random) {
+            setTimeout(function () { alert("You Win"); }, 100)
+            setTimeout(function () {
+                wins++
+                reset();
+            }, 100)
+
+        }
+        else if (score > random) {
+            setTimeout(function () { alert("You Lose"); }, 100)
+            setTimeout(function () {
+                losses++
+                reset();
+            }, 100)
+        }
+        else {
+            $("#score").html(score)
+        }
     }
-    else if (score > random){
-        alert("You Lose")
-        losses++
-        reset()
+
+    function reset() {
+        score = 0
+        random = Math.floor(Math.random() * (max - min) + min)
+        crystal1 = ($("#crystal1").val(Math.floor(Math.random() * (19 - 1) + 1)))
+        crystal2 = ($("#crystal2").val(Math.floor(Math.random() * (19 - 1) + 1)))
+        crystal3 = ($("#crystal3").val(Math.floor(Math.random() * (19 - 1) + 1)))
+        crystal4 = ($("#crystal4").val(Math.floor(Math.random() * (19 - 1) + 1)))
+        $("#random").html(random)
+        $("#score").html(score)
+        $("#wins").html("Wins: " + wins)
+        $("#losses").html("Losses: " + losses)
+
     }
-    else{
-    }
-}
+
 })
 
-// /*select random number
-// display number
-// select random value for all crystals
-// display score
-// when crystal is clicked make score go up 
-// if score = random win
-// else if score > random lose
-// else keep playing
-// */
-// var random = (Math.floor(Math.random() * 100)
-
-
-// })
-// $("#crystal2").click(function(){
-//     var val2 = parseInt($("#crystal2").val())
-//     score = score + val2
-//     $("#score").html(score)
-//     if (score === random){
-//         alert("You Win")
-//         wins++
-//         reset()
-//     }
-//     else if (score > random){
-//         alert("You Lose")
-//         losses++
-//         reset()
-//     }
-//     else{
-//     }
-// })
-
-    
-//     function(){
-//     var val3 = parseInt($("#crystal3").val())
-//     score = score + val3
-//     $("#score").html(score)
-//     if (score === random){
-//         alert("You Win")
-//         wins++
-//         reset()
-//     }
-//     else if (score > random){
-//         alert("You Lose")
-//         losses++
-//         reset()
-//     }
-//     else{
-//     }
-// })
-// $("#crystal4").click(function(){
-//     var val4 = parseInt($("#crystal4").val())
-//     score = score + val4
-//     $("#score").html(score)
-//     if (score === random){
-//         alert("You Win")
-//         wins++
-//         reset()
-//     }
-//     else if (score > random){
-//         alert("You Lose")
-//         losses++
-//         reset()
-//     }
-//     else{
-//     }
-// })
-// })
